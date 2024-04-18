@@ -32,7 +32,11 @@ ALLOWED_HOSTS = []
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# This line can be removed/commented out
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
 
 # Application definition
 
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'Musify.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        "DIRS": [os.path.join(BASE_DIR / "templates")], 
+        'DIRS': [BASE_DIR / "templates"], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +89,7 @@ DATABASES = {
         'NAME': 'NewMusify',
         'USER': 'postgres',
         'PASSWORD': '353659956Tokyoo',  # Replace with your actual password
-        'HOST': 'localhost',  # Or the address of your PostgreSQL server
+        'HOST': 'host.docker.internal',  # Or the address of your PostgreSQL server
         'PORT': '5432',  # The default PostgreSQL port
     }
 }
@@ -124,9 +128,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
