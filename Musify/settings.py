@@ -24,9 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3&og=*yz#nb&103vt-xhzdopmf+3+us(^l9-rq^9g9iyvau54('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+#Debug is equals to false for the deploying part
+
+DEBUG = False
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'https://musify-app-4z8e.onrender.com/']
 
 
 
@@ -88,11 +91,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'NewMusify',
         'USER': 'postgres',
-        'PASSWORD': '353659956Tokyoo',  # Replace with your actual password
-        'HOST': 'host.docker.internal',  # Or the address of your PostgreSQL server
-        'PORT': '5432',  # The default PostgreSQL port
+        'PASSWORD': '353659956Tokyoo',
+        'HOST': 'localhost',  # Change this from 'host.docker.internal'
+        'PORT': '5432',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -134,5 +138,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#add the static root (Deployment setting)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 

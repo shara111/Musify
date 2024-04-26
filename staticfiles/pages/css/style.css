@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
+html {
+  background: url(https://img.freepik.com/free-vector/realistic-style-technology-particle-background_23-2148426704.jpg)
+    repeat;
+  background-size: auto;
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+}
